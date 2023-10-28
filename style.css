@@ -146,6 +146,13 @@ header {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
+.first-text, .container {
+    display: flex;
+}
+
+.first-text span, .container span {
+    white-space: nowrap; /* Mencegah pemisahan kata */
+}
 .first-text {
     font-size: large;
     text-align: center;
