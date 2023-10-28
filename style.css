@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Thambi+2:weight@700&display=swap');
+
+body {
+    color: black;
+    background-color: rgb(249, 30, 165);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column; /* Konten di bawah header */
+    font-family: 'Baloo Thambi 2', cursive;
+    font-weight: 1000;
+    font-size: 3rem;
+    
+}
+
+/* CSS untuk header */
+header {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgb(4, 0, 3); /* Ganti dengan warna latar belakang yang Anda inginkan */
+    border-radius: 20px 20px 20px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-slider {
+    display: flex;
+    transition: transform 1s ease-in-out;
+    
+
+}
+
+.image-slider img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+
+/* CSS untuk animasi loading */
+.loading-container {
+    display: none;
+    text-align: center;
+}
+
+.loading-text {
+    font-size: 2rem; /* Menggunakan unit rem */
+    color: aqua;
+}
+
+.loading-bar {
+    width: 0;
+    height: 20px;
+    background-color: #0074d9;
+    transition: width 0.5s;
+}
+
+/* CSS untuk kontainer yang memposisikan konten di tengah halaman */
+.centered-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+}
+
+
+
+/* CSS untuk tombol */
+.button-container {
+    margin-top: 10px;
+    
+}
+
+    /* CSS untuk mengubah warna tombol */
+    #redirectButton {
+    background-color: #ff339c; /* Warna latar belakang */
+    color: #ff339c; /* Warna teks */
+    border: none; /* Hilangkan border */
+    padding: 30px 50px; /* Ukuran padding tombol */
+    cursor: pointer;
+    font-size: medium;
+    animation: glow4 0.3s infinite;
+    font-family:'Courier New', Courier, monospace
+}
+
+    /* Hover state: mengubah warna tombol saat mouse di atasnya */
+    #redirectButton:hover {
+    background-color: #f20343;
+}
+
+
+.container > span {
+    animation: glow 2s ease-in-out infinite;
+
+} 
+
+@keyframes glow {
+    0%, 100%{
+        color: #06dbe7;
+        text-shadow: 0 0 12px rgb(28, 2, 178), 0 0 50px rgb(8, 2, 178), 0 0 100px rgb(8, 2, 178);
+    }
+    10%, 90%{
+        color: rgb(249, 30, 165);
+        text-shadow: none;
+    }
+}
+
+.container > span:nth-child(2){
+    animation-delay: 0s;
+}
+.container > span:nth-child(3){
+    animation-delay: 0s;
+}
+.container > span:nth-child(4){
+    animation-delay: 0.30s;
+}
+.container > span:nth-child(5){
+    animation-delay: 0.30s;
+}
+.container > span:nth-child(7){
+    animation-delay: 0.60s;
+}
+.container > span:nth-child(8){
+    animation-delay: 0.60s;
+}
+.container > span:nth-child(9){
+    animation-delay: 0.90s;
+}
+.container > span:nth-child(10){
+    animation-delay: 0.90s;
+}
+.container > span:nth-child(11){
+    animation-delay: 1.20s;
+}
+.container > span:nth-child(12){
+    animation-delay: 1.20s;
+}
+
+/* CSS untuk teks tambahan */
+.additional-text {
+    font-size: 1.5rem; /* Menggunakan unit rem */
+    text-align: center;
+    color: #faee05;
+    animation: fadeIn 2s ease-in-out, glow2 2s infinite; /* Animasi muncul dan berkedip-kedip */
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.first-text {
+    font-size: large;
+    text-align: center;
+    animation: glow1 1s ease-in-out infinite ;
+    font-family:Arial, Helvetica, sans-serif;
+    
+}
+
+@keyframes glow1 {
+    0%, 100%{
+        color: #06dbe7;
+        text-shadow: 0 0 12px rgb(28, 2, 178), 0 0 50px rgb(8, 2, 178), 0 0 100px rgb(8, 2, 178);
+    }
+    10%, 90%{
+        color: rgb(249, 30, 165);
+        text-shadow: 0 0 12px rgb(5, 5, 8), 0 0 50px rgb(5, 5, 8), 0 0 100px rgb(5, 5, 8);
+    }
+}
+
+/* Keyframes untuk animasi muncul */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyframes untuk animasi berkedip-kedip */
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes glow2 {
+    0%, 100%{
+        color: #f5e905;
+        text-shadow: 0 0 12px rgb(0, 255, 153), 0 0 50px rgb(8, 2, 178), 0 0 100px rgb(8, 2, 178);
+    }
+    10%, 90%{
+        color: rgb(235, 247, 7);
+        text-shadow: 0 0 12px rgb(5, 5, 8), 0 0 50px rgb(5, 5, 8), 0 0 100px rgb(5, 5, 8);
+    }
+}
+
+@keyframes glow4 {
+    0%, 100%{
+        color: #02bcff;
+        text-shadow: 0 0 12px rgb(191, 0, 255), 0 0 50px rgb(191, 0, 255), 0 0 100px rgb(191, 0, 255);
+    }
+    10%, 90%{
+        color: rgb(7, 0, 4);
+        text-shadow: none;
+    }
+}

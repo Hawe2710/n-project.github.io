@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    
+</head>
+<body>
+    <header>
+        <div class="image-slider">
+            <img src="image5.jpeg" alt="Image 1">
+            <img src="image6.jpeg" alt="Image 2">
+            <img src="image7.jpeg" alt="Image 3">
+            
+        </div>
+    </header>
+    <script src="script.js"></script>
+    <div class="centered-content">
+        <div class="first-text">
+            <span>H</span>
+            <span>A</span>
+            <span>L</span>
+            <span>L</span>
+            <span>0</span>
+            <span>&nbsp;</span>
+            <span>D</span>
+            <span>E</span>
+            <span>C</span>
+            <span>K</span>
+        </div>
+        <div class="container">
+            <span>N</span>
+            <span>A</span>
+            <span>I</span>
+            <span>L</span>
+            <span>A</span>
+            <span>&nbsp;</span>
+            <span>R</span>
+            <span>A</span>
+            <span>F</span>
+            <span>I</span>
+            <span>F</span>
+            <span>A</span>
+        </div>
+
+        <div class="additional-text">
+            
+            HBD ya kawan :)<br>
+             hope you like it!!!
+        </div>
+       
+
+        <!-- Kontainer loading -->
+        <div class="loading-container">
+            <p class="loading-text">Loading...</p>
+            <div class="loading-bar"></div>
+        </div>
+
+        <!-- Kontainer tombol -->
+        <div class="button-container">
+            <button id="redirectButton">Buka Kado ke-5 neh >>>  <br></button>
+            
+        </div>
+    </div>
+
+<script>
+        document.getElementById('redirectButton').addEventListener('click', function() {
+            // Sembunyikan tombol
+            const buttonContainer = document.querySelector('.button-container');
+            buttonContainer.style.display = 'none';
+            
+            // Menampilkan kontainer loading
+            const loadingContainer = document.querySelector('.loading-container');
+            loadingContainer.style.display = 'block';
+
+            // Membuat animasi loading
+            const loadingBar = document.querySelector('.loading-bar');
+            let progress = 0;
+            const interval = setInterval(function() {
+                progress += 10; // Menambah progress sebesar 10%
+                loadingBar.style.width = progress + '%';
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    // Setelah mencapai 100%, arahkan pengguna ke halaman lain
+                    window.location.href = 'flower.html';
+                }
+            }, 500); // Perbarui setiap 0.5 detik
+        });
+    </script>
+
+<!-- Tambahkan script untuk slider otomatis dan navigasi titik-titik -->
+<script>
+    const slider = document.querySelector('.slider');
+    const slides = document.querySelectorAll('.slide');
+    const indicators = document.querySelectorAll('.indicator');
+
+    let currentSlide = 0;
+
+    function showSlide(slideIndex) {
+        slider.style.transform = `translateX(-${slideIndex * 100}%)`;
+        indicators.forEach((indicator, index) => {
+            if (index === slideIndex) {
+                indicator.classList.add('active');
+            } else {
+                indicator.classList.remove('active');
+            }
+        });
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    setInterval(nextSlide, 5000); // Ganti gambar setiap 5 detik
+
+    // Tambahkan event click pada indikator
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            currentSlide = index;
+            showSlide(currentSlide);
+        });
+    });
+</script>
+
+</body>
+</html>
